@@ -9,7 +9,7 @@
           <div class="col-md-12 col-lg-10 col-xl-6">
             <!-- Default form login -->
             <form class="text-center" v-on:submit.prevent="loginSubmit">
-              <p class="h4 mb-4 text-white">Logga in</p>
+              <p class="h4 mb-4 text-white font-weight-normal">Logga in</p>
 
               <input
                 type="email"
@@ -28,7 +28,7 @@
               <div class="d-flex justify-content-around">
                 <div>
                   <!-- Forgot password -->
-                  <a href="#">Glömt lösenord?</a>
+                  <router-link to="/login" class="font-weight-normal">Glömt lösenord?</router-link>
                 </div>
               </div>
 
@@ -95,6 +95,15 @@ export default {
 }
 .z-10{
   z-index: 10;
+}
+a:hover{
+  color: white;
+}
+p{
+  color: #969696;
+}
+a{
+  color: rgb(219, 219, 219);
 }
 @media (max-height: 800px) and (min-width: 1000px) {
   .ml {

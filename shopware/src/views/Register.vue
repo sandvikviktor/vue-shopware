@@ -4,12 +4,12 @@
       <!--Section: Content-->
       <section class="px-md-5 mx-md-5 text-center text-lg-left">
         <!--Grid row-->
-        <div  class="row d-flex grid-row">
+        <div class="row d-flex grid-row">
           <!--Grid column-->
           <div class="col-md-12 col-lg-10 col-xl-6">
             <!-- Default form register -->
             <form class="text-center" v-on:submit.prevent="regSubmit">
-              <p class="h4 mb-4 text-white">Registrera</p>
+              <p class="h4 mb-4 text-white font-weight-normal">Registrera</p>
 
               <div class="form-row mb-4">
                 <div class="col">
@@ -116,6 +116,15 @@ export default {
 }
 .z-10{
   z-index: 10;
+}
+a:hover{
+  color: white;
+}
+p{
+  color: #969696;
+}
+a{
+  color: rgb(219, 219, 219);
 }
 @media (max-height: 800px) and (min-width: 1000px) {
   .ml {

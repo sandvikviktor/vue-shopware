@@ -49,7 +49,7 @@
                 <button
                   v-if="userInlogged"
                   v-on:click.stop="saveOrder({currentUserId, shoppingCartTotal, shoppingCart})"
-                  title="Gå till mitt konto för att se dina sparade ordrar."
+                  title="Gå till mina ordrar för att se dina sparade ordrar."
                   type="button"
                   class="btn btn-green btn-rounded"
                 >Spara Order</button>

@@ -3,8 +3,7 @@ import axios from 'axios'
 export default {
 
    state: {
-      cart: [],
-      orders: [],
+      cart: []
    },
 
    mutations: {
@@ -27,9 +26,6 @@ export default {
       DELETE_FROM_CART(state, id) {
          state.cart = state.cart.filter(item => { return item.product.id !== id })
          localStorage.setItem('cart', JSON.stringify(state.cart))
-      },
-      SET_ORDERS(state, orders) {
-         state.orders = orders
       }
    },
 
@@ -49,32 +45,6 @@ export default {
       },
       deleteProductFromCart({ commit }, id) {
          commit('DELETE_FROM_CART', id)
-      },
-
-      saveOrder({ commit }, order) {
-         if (order.currentUserId != null && order.shoppingCart != null) {
-            axios.post('http://localhost:9999/api/orders/saveorder', { userId: order.currentUserId, order: order.shoppingCart, total: order.shoppingCartTotal })
-               .then(res => {
-                  if (res.status === 201) {
-                     console.log("Success");
-                  }
-               })
-         }
-      },
-      getOrdersById({ commit }, currentUserId) {
-         // console.log(currentUserId);
-         axios.get('http://localhost:9999/api/orders/getorders/' + currentUserId).then(res => {
-            commit('SET_ORDERS', res.data)
-         }).catch(error => {
-            console.log(error);
-         })
-      },
-      getOrders({ commit }) {
-         axios.get('http://localhost:9999/api/orders/getorders').then(res => {
-            commit('SET_ORDERS', res.data)
-         }).catch(error => {
-            console.log(error);
-         })
       }
    },
 
@@ -107,9 +77,6 @@ export default {
             })
          }
          return items
-      },
-      getSavedOrders(state) {
-         return state.orders
       }
    }
 

@@ -2,7 +2,7 @@
   <div id="manage" class="vh-100 d-flex justify-content-center align-items-center">
     <div id="manage-content" class="position-relative z-10 text-white text-center">
       <h2>Hej {{currentUserName}}</h2>
-      <h5>här är din fina kontosida.</h5>
+      <h5>här är din fina kontosida...</h5>
     </div>
   </div>
 </template>
