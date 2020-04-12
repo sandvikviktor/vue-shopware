@@ -25,7 +25,7 @@ export default {
          axios.post('http://localhost:9999/api/users/register', user)
             .then(res => {
                if (res.status === 201) {
-                  router.push('/')
+                  router.push('/login')
                }
             })
       },

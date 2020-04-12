@@ -36,6 +36,13 @@ export default {
          }).catch(error => {
             console.log(error);
          })
+      },
+      deleteOrder({ commit }, orderId) {
+         axios.delete('http://localhost:9999/api/orders/deleteorder' + orderId).then(res => {
+            console.log("Order is deleted.");
+         }).catch(error => {
+            console.log("Didn't find order");
+         })
       }
    },
 

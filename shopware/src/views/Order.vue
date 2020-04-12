@@ -49,7 +49,11 @@
                 <button
                   v-if="userInlogged"
                   v-on:click.stop="saveOrder({currentUserId, shoppingCartTotal, shoppingCart})"
-                  title="Gå till mina ordrar för att se dina sparade ordrar."
+                  data-toggle="popover"
+                  data-trigger="focus"
+                  data-placement="top"
+                  title="Din order är nu sparad!"
+                  data-content="Gå till mina ordrar för att se dina sparade ordrar."
                   type="button"
                   class="btn btn-green btn-rounded"
                 >Spara Order</button>
@@ -80,7 +84,12 @@ export default {
     OrderProduct
   },
   methods: {
-    ...mapActions(["saveOrder"])
+    ...mapActions(["saveOrder"]),
+  },
+  created() {   
+    $(document).ready(function(){
+      $('[data-toggle="popover"]').popover();
+    });
   },
   computed: {
     ...mapGetters([
@@ -88,7 +97,7 @@ export default {
       "shoppingCartTotal",
       "userInlogged",
       "currentUserId"
-    ])
+    ]),
   }
 };
 </script>
@@ -97,7 +106,7 @@ export default {
 .overflow {
   overflow: hidden !important;
 }
-.min-height{
+.min-height {
   min-height: 100vh;
 }
 p {
@@ -105,5 +114,13 @@ p {
   font-weight: 400;
   font-size: 0.8rem;
   left: 0;
+}
+.popover-header{
+  /* background-color: rgb(37, 37, 37); */
+  /* color: white */
+  font-weight: 500;
+}
+.popover-body{
+  /* background-color: rgb(241, 241, 241); */
 }
 </style>
