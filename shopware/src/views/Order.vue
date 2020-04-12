@@ -116,11 +116,6 @@ p {
   left: 0;
 }
 .popover-header{
-  /* background-color: rgb(37, 37, 37); */
-  /* color: white */
   font-weight: 500;
-}
-.popover-body{
-  /* background-color: rgb(241, 241, 241); */
 }
 </style>
