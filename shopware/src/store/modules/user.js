@@ -33,7 +33,6 @@ export default {
          axios.post('http://localhost:9999/api/users/login', { email: user.email, password: user.password })
             .then(res => {
                if (res.status === 200) {
-                  console.log(res.data);
                   sessionStorage.setItem("currentUserToken", res.data.token)
                   sessionStorage.setItem("currentUserId", res.data.user.id)
                   sessionStorage.setItem("userName", res.data.user.name)

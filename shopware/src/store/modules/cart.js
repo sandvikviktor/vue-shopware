@@ -8,7 +8,6 @@ export default {
    mutations: {
       ADD_TO_CART(state, { product, quantity }) {
          let exists = state.cart.find(item => { return item.product.id === product.id })
-         console.log(exists);
          if (exists) {
             exists.quantity += quantity
             return
